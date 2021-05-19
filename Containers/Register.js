@@ -3,6 +3,20 @@ import React from 'react';
 import {Text, Container, Content, Title, Form, Item, Input, Button, Footer} from "native-base";
 
 export default function Login({ navigation }) {
+    let client = {
+        username : '',
+        password : '',
+        Name : '',
+        lastName : '',
+        height : '',
+        weight : '',
+        adress: {
+            street : '',
+            country : '',
+            city : ''
+        }
+    };
+
     return <Container>
         <Content>
             <Title>
@@ -11,15 +25,36 @@ export default function Login({ navigation }) {
 
             <Form>
                 <Item>
-                    <Input placeholder="Username" />
+                    <Input value={client.username} placeholder="Username" />
                 </Item>
                 <Item last>
-                    <Input placeholder="Password" />
+                    <Input value={client.password} placeholder="Password" />
+                </Item>
+                <Item >
+                    <Input value={client.name} placeholder="Name" />
+                </Item>
+                <Item >
+                    <Input value={client.lastName} placeholder="Last Name" />
+                </Item>
+                <Item >
+                    <Input value={client.height} placeholder="Height" />
+                </Item>
+                <Item >
+                    <Input value={client.weight} placeholder="Weight" />
+                </Item>
+                <Item >
+                    <Input value={client.street} placeholder="Street" />
+                </Item>
+                <Item >
+                    <Input value={client.city} placeholder="City" />
+                </Item>
+                <Item >
+                    <Input value={client.country} placeholder="Country" />
                 </Item>
 
                 <Button style={{ width: '100%' }} onPress={() => navigation.navigate('HomeDrawer', { screen: 'Home' })}>
                     <Text>
-                        Login
+                        Sign in
                     </Text>
                 </Button>
             </Form>
